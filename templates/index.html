@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Messenger </title>
+        <link rel = "stylesheet" href = "static/index.css">
+    </head>
+    
+    <body>
+        <h1> Messenger </h1>
+        
+        <form id = "form" method = "post">
+            <input
+                id = "name"
+                name = "name"
+                placeholder = "Username"
+                {% if name %} value = "{{name}}" {% endif %}
+            >
+            <input id = "message" name = "message" placeholder = "Message">
+            <input type = "submit" value = "Send">
+        </form>
+        
+        <br>
+        
+        <table>
+            <tr>
+                <th class = "left"> Time </th>
+                <th class = "middle"> Name </th>
+                <th class = "right"> Message </th>
+            </tr>
+            
+            {% for m in messages %}
+            <tr>
+                <td class = "left"> {{m[0]}} </td>
+                <td class = "middle"> {{m[1]}} </td>
+                <td class = "right"> {{m[2]}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <script src = "static/index.js"></script>
+    </body>
+</html>
