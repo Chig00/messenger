@@ -9,4 +9,4 @@ window.setInterval(
         }
     },
     1000
-)
+);

@@ -2,11 +2,9 @@ import time
 import collections
 import flask
 
-app = flask.Flask(__name__)
-
 MAX_MESSAGES = 25
 
-#
+app = flask.Flask(__name__)
 messages = collections.deque()
 
 @app.route("/", methods = ["GET", "POST"])
