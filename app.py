@@ -24,6 +24,4 @@ def index():
         if len(messages) > MAX_MESSAGES:
             messages.pop()
     
-    print(flask.render_template("index.html", name = name, messages = messages))
-    
     return flask.render_template("index.html", name = name, messages = messages)
